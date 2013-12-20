@@ -17,7 +17,7 @@ if (Meteor.isClient) {
         gox = data.findOne({'name': 'gox'});
         x = data.findOne({'name': 'jackpot'});
 	    test = x && x.balance;
-	    return test/ 100000000 * gox.exchange_rate;
+	    return (test/ 100000000 * gox.exchange_rate).toFixed(2);
         }
     });
 }
