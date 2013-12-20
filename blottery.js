@@ -15,9 +15,10 @@ if (Meteor.isClient) {
         },
     dollars: function(){
         bitstamp = data.findOne({'name': 'bitstamp'});
+        test2 = bitstamp && bitstamp.exchange_rate;
         x = data.findOne({'name': 'jackpot'});
 	    test = x && x.balance;
-	    return (test/ 100000000 * bitstamp.exchange_rate).toFixed(2);
+	    return (test/ 100000000 * bitstamp.test2).toFixed(2);
         }
     });
 }
