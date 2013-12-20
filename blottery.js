@@ -18,7 +18,7 @@ if (Meteor.isClient) {
         test2 = bitstamp && bitstamp.exchange_rate;
         x = data.findOne({'name': 'jackpot'});
 	    test = x && x.balance;
-	    return (test/ 100000000 * bitstamp.test2).toFixed(2);
+	    return (test/ 100000000 * test2.exchange_rate).toFixed(2);
         }
     });
 }
