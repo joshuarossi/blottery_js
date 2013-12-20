@@ -1,0 +1,16 @@
+/* CSS declarations go here */
+
+div.blottery {
+    font-family: sans-serif;
+
+    border-radius: 10px;
+    background-color: lightblue;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+p {
+    padding-bottom: 1px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+}

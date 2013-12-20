@@ -1,0 +1,21 @@
+<head>
+  <title>Blottery</title>
+</head>
+
+<body>
+  {{> hello}}
+
+</body>
+
+<template name="hello">
+  <div class="blottery">
+  <p>Send your donation via Blottery to</p>
+  <p><a href=" bitcoin:{{address}}?&message=blottery">{{address}}</a> </p>
+  <div><img src="qr-png.jpg"></div>
+  <p>for a chance to win {{jackpot}} bitcoin</p>
+      <p>(approx ${{dollars}})</p>
+    <br>
+  </div>
+  <!--<p>Blottery Profit is {{profit}}</p><br>-->
+  <!--<p>The Blogger has made {{blogger_profit}}</p><br>-->
+</template>
