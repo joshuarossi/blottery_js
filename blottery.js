@@ -1,27 +1,30 @@
 data = new Meteor.Collection('data');
 
-if (Meteor.isClient) {
-  Template.hello.helpers({
-    jackpot: function(){
+if (Meteor.isClient) Template.hello.helpers({
+    jackpot: function () {
         x = data.findOne({'name': 'jackpot'});
-	    test = x && x.balance;
-	    return test/100000000;
-        },
-    address: function(){
-	if (data)
-		x = data.findOne({'name':'blogger'});
-		test = x && x.bitcoin_address;
+        test = x && x.balance;
+        return test / 100000000;
+    },
+    address: function () {
+        if (data)
+            x = data.findOne({'name': 'blogger'});
+        test = x && x.bitcoin_address;
         return test;
-        },
-    dollars: function(){
-        bitstamp = data.findOne({'name': 'bitstamp'});
-        test2 = bitstamp && bitstamp.exchange_rate;
-        x = data.findOne({'name': 'jackpot'});
-	    test = x && x.balance;
-	    return (test/ 100000000 * test2).toFixed(2);
+    },
+    dollars: function () {
+        if (data) {
+            bitstamp = data.findOne({'name': 'bitstamp'});
+            test2 = bitstamp && bitstamp.exchange_rate;
+            x = data.findOne({'name': 'jackpot'});
+            test = x && x.balance;
+            return parseFloat((test / 100000000 * test2).toFixed(2));
         }
-    });
-}
+        else {
+            return 0
+        }
+    }
+});
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
