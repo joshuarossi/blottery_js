@@ -14,10 +14,10 @@ if (Meteor.isClient) {
         return test;
         },
     dollars: function(){
-        gox = data.findOne({'name': 'gox'});
+        bitstamp = data.findOne({'name': 'bitstamp'});
         x = data.findOne({'name': 'jackpot'});
 	    test = x && x.balance;
-	    return (test/ 100000000 * gox.exchange_rate).toFixed(2);
+	    return (test/ 100000000 * bitstamp.exchange_rate).toFixed(2);
         }
     });
 }
